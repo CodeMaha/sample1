@@ -1,0 +1,30 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Google TestNG Suite">
+
+    <test name="Google Test Execution">
+
+        <classes>
+            <class name="TestngDemo.GoogleTest"/>
+        </classes>
+
+    </test>
+
+</suite>
+<!--
+<suite name="Google Partial Execution">
+
+    <test name="Selected Tests">
+
+        <classes>
+            <class name="TestngDemo.GoogleTest">
+                <methods>
+                    <include name="test2"/>
+                    <include name="openGoogle"/>
+                </methods>
+            </class>
+        </classes>
+
+    </test>
+
+</suite>-->

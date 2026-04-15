@@ -1,0 +1,49 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<!--<suite name="Login Data Driven Suite">-->
+
+<!--parallelExecution-->
+<!--parallel="tests" &ndash;&gt;Each <test> tag inside the suite runs in a separate thread-->
+<!--thread count -> upto how many test can run concurrently-->
+<suite name="Parallel Login Suite" parallel="tests" thread-count="3">
+    <!-- Test Case 1: Valid Login -->
+    <test name="Valid Login Test">
+        <parameter name="username" value="tomsmith"/>
+       <!-- <parameter name="password" value="SuperSecretPassword!"/>-->
+        <parameter name="password" value="Password!"/>
+        <parameter name="expectedResult" value="success"/>
+
+        <classes>
+           <!-- <class name="TestngDataDriven.LoginDataDrivenXMLTest"/>-->
+            <!-- parallelExecution-->
+            <class name="TestngDataDriven.LoginParallelExecution"/>
+        </classes>
+    </test>
+
+    <!-- Test Case 2: Invalid Username -->
+    <test name="Invalid Username Test">
+        <parameter name="username" value="invalidUser"/>
+        <parameter name="password" value="secret123"/>
+        <parameter name="expectedResult" value="failure"/>
+
+        <classes>
+           <!-- <class name="TestngDataDriven.LoginDataDrivenXMLTest"/>-->
+            <!-- parallelExecution-->
+            <class name="TestngDataDriven.LoginParallelExecution"/>
+        </classes>
+    </test>
+
+    <!-- Test Case 3: Invalid Password -->
+    <test name="Invalid Password Test">
+        <parameter name="username" value="tomsmith"/>
+        <parameter name="password" value="wrongPass"/>
+        <parameter name="expectedResult" value="failure"/>
+
+        <classes>
+       <!--     <class name="TestngDataDriven.LoginDataDrivenXMLTest"/>-->
+           <!-- parallelExecution-->
+            <class name="TestngDataDriven.LoginParallelExecution"/>
+        </classes>
+    </test>
+
+</suite>
