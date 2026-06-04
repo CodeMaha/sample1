@@ -34,6 +34,7 @@ public class RelativeLocatorDemo {
         WebElement loginButton = driver.findElement(
                 RelativeLocator.with(By.tagName("button"))
                         .below(password)
+                               // .above(clickbutton)
 
         );
         loginButton.click();

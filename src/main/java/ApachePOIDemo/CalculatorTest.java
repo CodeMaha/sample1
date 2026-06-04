@@ -18,7 +18,7 @@ public class CalculatorTest {
       //  String excelPath = "C:\\Users\\532252\\IdeaProjects\\sample1\\Resource";
 //input & ouput
         String excelPath ="C:\\Users\\532252\\IdeaProjects\\sample1\\Resource\\TestData.xlsx";
-
+//site path
         String htmlPath = "file:///C:/Users/532252/OneDrive%20-%20Cognizant/Desktop/QE%20Batch/selinium/RefSite/ApachePOI/Calc.html"; // CHANGE THIS
 
         // Setup Selenium
@@ -27,16 +27,17 @@ public class CalculatorTest {
         driver.manage().window().maximize();
         driver.get(htmlPath);
 
-        // Excel Setup
+        // Excel Setup --> file --> workbook --> sheet--> cells
         FileInputStream fis = new FileInputStream(excelPath);
         Workbook workbook = new XSSFWorkbook(fis);
         Sheet sheet = workbook.getSheetAt(0);
 
         // Styles
+        // pass fields in green
         CellStyle passStyle = workbook.createCellStyle();
         passStyle.setFillForegroundColor(IndexedColors.LIGHT_GREEN.getIndex());
         passStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
-
+        // fail fields in red
         CellStyle failStyle = workbook.createCellStyle();
         failStyle.setFillForegroundColor(IndexedColors.RED.getIndex());
         failStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
@@ -49,18 +50,19 @@ public class CalculatorTest {
             double input2 = row.getCell(1).getNumericCellValue();
             String operation = row.getCell(2).getStringCellValue().toLowerCase();
             double expected = row.getCell(3).getNumericCellValue();
+
 //pass the read value to the site input fields
-            // Enter values in UI
+            // Enter values in UI in input box
             driver.findElement(By.id("num1")).clear();
             driver.findElement(By.id("num1")).sendKeys(String.valueOf(input1));
 
             driver.findElement(By.id("num2")).clear();
             driver.findElement(By.id("num2")).sendKeys(String.valueOf(input2));
 
-            // Normalize dropdown value
+            // Normalize dropdown value --> choos ethe operation
             Select select = new Select(driver.findElement(By.id("operation")));
             select.selectByValue(operation);
-
+            // perform operation by clicking submit button
             driver.findElement(By.tagName("button")).click();
 
             // Get Result

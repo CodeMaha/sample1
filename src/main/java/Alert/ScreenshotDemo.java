@@ -26,7 +26,7 @@ public class ScreenshotDemo {
         // Open local HTML file
         driver.get("file:///C:/Users/532252/OneDrive%20-%20Cognizant/Desktop/QE%20Batch/selinium/RefSite/index.html");
 
-        // creenshot BEFORE any action
+        // screenshot BEFORE any action
         takeScreenshot(driver, "Before_Actions.png");
 
         Actions actions = new Actions(driver);

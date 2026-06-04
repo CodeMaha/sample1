@@ -12,8 +12,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import java.time.Duration;
-
-
 public class App
 {
     public static void main(String[] args) {
@@ -33,7 +31,7 @@ public class App
             // Simple check
             System.out.println("Title: " + driver.getTitle());
             String act_title=driver.getTitle();
-
+ //title="OpenCart - Open Source Shopping Cart Solution"
             String result = act_title.equals("Google")? "Title is Google": "Title is not Google";
             System.out.println(result);
         }

@@ -7,8 +7,6 @@ import java.util.Set;
 
 
 public class MultipleWindowsDemo {
-
-
     public static void main(String[] args) throws InterruptedException {
 // iteration - prt--> <list>ID --> wind1--> operation --> closewind--> wind2 --> opr-->close->wind3-->opr-->
         WebDriver driver = null;
@@ -76,7 +74,7 @@ public class MultipleWindowsDemo {
 
                     Thread.sleep(2000);
                     // Pause for observation
-
+// how to perforn seperate actions based on the page - use the id in if condition .. else if next unique id ---> perform the page action (testing condition )
                     driver.close();
                     // Closes the currently active child window only
                 }

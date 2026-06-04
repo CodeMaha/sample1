@@ -8,6 +8,12 @@ import org.openqa.selenium.JavascriptExecutor;
 
 import java.util.List;
 
+/*https://demoqa.com/links
+https://the-internet.herokuapp.com/login
+tomsmith
+SuperSecretPassword!*/
+
+
 public class LocatorDemo {
 
     public static void main(String[] args) {
@@ -20,6 +26,7 @@ public class LocatorDemo {
             driver.manage().window().maximize();
 
             // 2. Open index.html
+            //locate element --> perform action
             driver.get("file:///C:/Users/532252/OneDrive%20-%20Cognizant/Desktop/QE%20Batch/selinium/RefSite/index.html");
               // Find Element by ID
             driver.findElement(By.id("username")).sendKeys("admin");
@@ -29,8 +36,8 @@ public class LocatorDemo {
             driver.findElement(By.id("loginBtn")).click();
             Thread.sleep(1000);
 //by name
-           /* driver.findElement(By.name("userName")).clear();
-            driver.findElement(By.name("pass")).clear();*/
+            driver.findElement(By.name("userName")).clear();
+            driver.findElement(By.name("pass")).clear();
             driver.navigate().refresh();
             Thread.sleep(1000);
 //JavascriptExecutor
@@ -76,6 +83,15 @@ public class LocatorDemo {
             Thread.sleep(500);
             driver.navigate().back();
             Thread.sleep(500);
+
+
+
+          /*  List<WebElement> links = driver.findElements(By.tagName("a"));
+            System.out.println("Total links: " + links.size());
+            for (WebElement link : links) {
+                System.out.println(link.getText());
+            }*/
+
             /* =====================================================
                CSS SELECTORS when you cant locate using text or if
                ===================================================== */

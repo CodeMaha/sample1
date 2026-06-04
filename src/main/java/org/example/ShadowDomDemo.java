@@ -4,6 +4,17 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import java.time.Duration;
 
+/*How Selenium Can Work With Shadow DOM (Selenium 4)
+Step by Step Concept (No code first)
+1.	Locate the Shadow Host
+2.	Open the Shadow Root
+3.	Then find elements inside
+
+ref url : https://the-internet.herokuapp.com/shadowdom
+*/
+
+
+
 public class ShadowDomDemo {
 
     public static void main(String[] args) {

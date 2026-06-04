@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CVS Automation Suite">
+
+    <test name="Login Test Execution">
+        <classes>
+            <class name="JsonDemo.LoginDataDrivenTest"/>
+        </classes>
+    </test>
+
+</suite>

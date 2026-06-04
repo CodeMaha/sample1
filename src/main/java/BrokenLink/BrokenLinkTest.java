@@ -79,3 +79,20 @@ public class BrokenLinkTest {
         driver.quit();
     }
 }
+
+/*
+A link is considered broken if:
+It returns HTTP status >= 400
+        404 → Not Found
+        500 → Server Error
+
+Steps:
+Collect all <a> tags
+Extract href attribute
+Send HTTP request
+Validate response code
+
+ref : https://the-internet.herokuapp.com/
+ref broken image anchor tag
+*/
+
