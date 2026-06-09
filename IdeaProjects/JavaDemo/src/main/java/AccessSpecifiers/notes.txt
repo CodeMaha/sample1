@@ -1,0 +1,5 @@
+Access	  Same Class	Same Package	Different Package
+public	  ✅	        ✅	            ✅
+private	  ✅	        ❌	            ❌
+default	  ✅	        ✅	            ❌
+protected ✅	        ✅	            ✅ (via inheritance)
